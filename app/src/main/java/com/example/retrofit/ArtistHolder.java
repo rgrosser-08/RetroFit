@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ArtistHolder extends RecyclerView.ViewHolder {
+public class ArtistHolder extends RecyclerView.ViewHolder  {
 
     public CardView cardArtist;
     public TextView txtName;
@@ -18,4 +18,5 @@ public class ArtistHolder extends RecyclerView.ViewHolder {
         txtName = (TextView) itemView.findViewById(R.id.txtName);
 
     }
+
 }

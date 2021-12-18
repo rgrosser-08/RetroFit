@@ -1,10 +1,14 @@
 package com.example.retrofit;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 
 
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList<Artist> artistList;
 
@@ -75,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                         /**
                          * Binding that List to Adapter
                          */
+
                         RecyclerView recyclerContacts = (RecyclerView) findViewById(R.id.recyclerArtists);
                         ArtistAdapter adapter = new ArtistAdapter(artistList, MainActivity.this);
                         recyclerContacts.setAdapter(adapter);
@@ -83,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                         /**
                          * Add listener to every recycler view items
                          */
+                        recyclerContacts.setOnClickListener(MainActivity.this::onClick);
                         /*recyclerContacts.addOnItemTouchListener(new CustomRVItemTouchListener(MainActivity.this, recyclerContacts, new RecyclerViewItemClickListener() {
                             @Override
                             public void onClick(View view, int position) {
@@ -110,5 +116,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Snackbar.make(findViewById(R.id.layoutMain), "Check your internet connection!", Snackbar.LENGTH_LONG).show();
         }
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+
     }
 }

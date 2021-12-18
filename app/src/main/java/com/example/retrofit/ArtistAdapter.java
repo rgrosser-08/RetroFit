@@ -22,6 +22,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistHolder> {
     List<Artist> list = Collections.emptyList();
     Context context;
 
+
     public ArtistAdapter(List<Artist> list, Context context) {
         this.list = list;
         this.context = context;

@@ -9,7 +9,6 @@ public interface ApiService {
     Retrofit get annotation with our URL
     And our method that will return us the List of ContactList
     */
-    String BASE_URL = "https://my-json-server.typicode.com/rgrosser-08/jsondb";
-    @GET("/jsondb/db")
+    @GET("rgrosser-08/jsondb/db")
     Call<ArtistList> getArtists();
 }

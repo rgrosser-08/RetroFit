@@ -8,8 +8,7 @@ public class RetroClient {
     /********
      * URLS
      *******/
-    private static final String ROOT_URL = "https://my-json-server.typicode.com/rgrosser-08/jsondb";
-    private ApiService Api;
+    private static final String ROOT_URL = "https://my-json-server.typicode.com/";
 
 
 
